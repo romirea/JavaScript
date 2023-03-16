@@ -66,9 +66,11 @@ if (materia3.aprobado) {
 let promedioFinal = sumNotas / cantAprobadas;
 alert("Tu promedio general es: " + promedioFinal);
 
-if (promedioFinal >= 7) {
+if (promedioFinal >= 8) {
     alert('Tu promedio es alto, felicitaciones!');
-} else {
+} else if(promedioFinal <8 && promedioFinal>=6){
+    alert("Tu promedio es muy bueno!")
+} else{
     alert('Tu promedio es algo bajo. Continuemos con la inscripción');
 }
 
