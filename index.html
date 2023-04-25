@@ -1,13 +1,122 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="config.js"></script>
-    <title>¡Inscribite!</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
+    <title>Sistema de inscripciones</title>
 </head>
+
 <body>
-    <h1>Sistema de inscripciones</h1>
+    <!-- Encabezado de la página -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Sistema de inscripciones</h1>
+            <p class="lead">Comencemos a planificar tu inscripción</p>
+        </div>
+    </div>
+
+    <!-- Sección de ingreso de nombre -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group">
+                        <label for="nombre">Ingresa tu nombre:</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Nombre" />
+                    </div>
+                    <button type="button" class="btn btn-primary" id="btn-bienvenida">Ingresar</button>
+                </form>
+                <p id="mensaje"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <form id="form-materias">
+            <h2>Ingreso de materias</h2>
+            <p>Por favor, indica si has cursado o no cada materia, y en caso afirmativo, ingresa la nota obtenida.</p>
+        
+            <div id="materias">
+                <div class="form-group">
+                    <label for="materia1">Derecho Constitucional</label>
+                    <select class="form-control" id="materia1" name="materia1">
+                        <option value="no">No cursado</option>
+                        <option value="si">Cursado</option>
+                    </select>
+                    <input type="number" class="form-control" id="nota1" name="nota1" placeholder="Nota" disabled>
+                </div>
+        
+                <div class="form-group">
+                    <label for="materia2">Derechos Humanos</label>
+                    <select class="form-control" id="materia2" name="materia2">
+                        <option value="no">No cursado</option>
+                        <option value="si">Cursado</option>
+                    </select>
+                    <input type="number" class="form-control" id="nota2" name="nota2" placeholder="Nota" disabled>
+                </div>
+        
+                <div class="form-group">
+                    <label for="materia3">Contratos</label>
+                    <select class="form-control" id="materia3" name="materia3">
+                        <option value="no">No cursado</option>
+                        <option value="si">Cursado</option>
+                    </select>
+                    <input type="number" class="form-control" id="nota3" name="nota3" placeholder="Nota" disabled>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Continuar</button>
+        </form>
+
+        <form id="form-cursada" style="display:none">
+            <h2>Selección de días y horarios para la cursada</h2>
+
+            <div class="form-group">
+                <label for="dias-disponibles">¿Qué días quieres cursar?</label>
+                <select class="form-control" id="dias-disponibles">
+                    <option value="1">Lunes y jueves</option>
+                    <option value="2">Martes y viernes</option>
+                    <option value="3">Sábados</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="horario-disponible">¿En qué horarios puedes cursar?</label>
+                <select class="form-control" id="horario-disponible">
+                    <option value="1">Mañana</option>
+                    <option value="2">Tarde</option>
+                    <option value="3">Noche</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Continuar</button>
+        </form>
+
+        <div id="resultados" style="display:none">
+            <h2>Resultados</h2>
+            <!-- <p>Tu promedio general es: <span id="promedio"></span></p> -->
+
+            <div id="mensaje-promedio">
+                <!-- El mensaje sobre el promedio se actualizará dinámicamente con JavaScript -->
+            </div>
+
+            <p>La materia recomendada para el turno y días elegidos es: <span id="materia-recomendada"></span></p>
+        </div>
+    </div>
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+    </script>
+    <script src="config.js"></script>
+
 </body>
+
 </html>
