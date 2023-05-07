@@ -8,6 +8,7 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
+        <link rel="stylesheet" href="style.css">
     <title>Sistema de inscripciones</title>
 </head>
 
@@ -36,12 +37,14 @@
         </div>
     </div>
 
+    <!-- Sección de ingreso de materias cursadas -->
+
     <div class="container">
 
         <form id="form-materias">
-            <h2>Ingreso de materias</h2>
+            <h2>Ingreso de materias cursadas</h2>
             <p>Por favor, indica si has cursado o no cada materia, y en caso afirmativo, ingresa la nota obtenida.</p>
-        
+
             <div id="materias">
                 <div class="form-group">
                     <label for="materia1">Derecho Constitucional</label>
@@ -51,7 +54,7 @@
                     </select>
                     <input type="number" class="form-control" id="nota1" name="nota1" placeholder="Nota" disabled>
                 </div>
-        
+
                 <div class="form-group">
                     <label for="materia2">Derechos Humanos</label>
                     <select class="form-control" id="materia2" name="materia2">
@@ -60,7 +63,7 @@
                     </select>
                     <input type="number" class="form-control" id="nota2" name="nota2" placeholder="Nota" disabled>
                 </div>
-        
+
                 <div class="form-group">
                     <label for="materia3">Contratos</label>
                     <select class="form-control" id="materia3" name="materia3">
@@ -71,8 +74,10 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary">Continuar</button>
+            <button type="submit" class="btn btn-primary" id="btn-continuar">Continuar</button>
         </form>
+
+        <!-- Sección de ingreso de dias y horarios para cursada -->
 
         <form id="form-cursada" style="display:none">
             <h2>Selección de días y horarios para la cursada</h2>
@@ -98,6 +103,8 @@
             <button type="submit" class="btn btn-primary">Continuar</button>
         </form>
 
+        <!-- Sección de resultados -->
+
         <div id="resultados" style="display:none">
             <h2>Resultados</h2>
             <!-- <p>Tu promedio general es: <span id="promedio"></span></p> -->
@@ -105,10 +112,57 @@
             <div id="mensaje-promedio">
                 <!-- El mensaje sobre el promedio se actualizará dinámicamente con JavaScript -->
             </div>
-
-            <p>La materia recomendada para el turno y días elegidos es: <span id="materia-recomendada"></span></p>
         </div>
     </div>
+
+    <!-- Materias disponibles para seleccionar -->
+    <div class="container">
+        <h2>Materias disponibles</h2>
+        <div id="materias-disponibles">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Nombre de la materia</th>
+                <th scope="col">Código de la materia</th>
+                <th scope="col">Días</th>
+                <th scope="col">Horario</th>
+                <th scope="col">Seleccionar</th>
+              </tr>
+            </thead>
+            <tbody id="tabla-materias">
+            </tbody>
+          </table>
+          <section id="materias">
+          </section>
+          <div>
+            <button id="confirmar-seleccion" class="btn btn-primary">Confirmar selección</button>
+            <button id="limpiar-seleccion" class="btn btn-danger">Limpiar selección</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="misMaterias" class="table"></div>
+            
+
+        <!-- Tabla de materias seleccionadas-->
+        <div class="container" id="materias-seleccionadas">
+            <h2>Estás por inscribirte en:</h2>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Nombre de la materia</th>
+                  <th scope="col">Código de la materia</th>
+                  <th scope="col">Días</th>
+                  <th scope="col">Horario</th>
+                </tr>
+              </thead>
+
+              <!-- //AGREGADO DE PRUEBA, TABLA -->
+              <tbody id="tabla-materias-seleccionadas">
+              </tbody>
+            </table>
+          </div>
+        </div>
 
 
     <!-- JavaScript Bundle with Popper -->
@@ -116,7 +170,6 @@
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
     </script>
     <script src="config.js"></script>
-
 </body>
 
 </html>

@@ -1,0 +1,71 @@
+{
+    "materiasDisponibles":[{
+        "nombre": "Teoria del delito",
+        "dias": "Martes y viernes",
+        "codigo": 989898,
+        "horario": "Mañana"
+    },
+    {
+        "nombre": "Sociedades",
+        "dias": "Martes y viernes",
+        "codigo": 878787,
+        "horario": "Tarde"
+    },
+
+    {
+        "nombre": "Concursos y quiebras",
+        "dias": "Martes y viernes",
+        "codigo": 656565,
+        "horario": "Noche"
+    },
+
+    {
+        "nombre": "Criminologia",
+        "dias": "Sábados",
+        "codigo": 434343,
+        "horario": "Mañana"
+    },
+
+    {
+        "nombre": "Sociologia",
+        "dias": "Sábados",
+        "codigo": 323232,
+        "horario": "Tarde"
+    },
+
+    {
+        "nombre": "Derecho Penal",
+        "dias": "Lunes y jueves",
+        "codigo": 172634,
+        "horario": "Mañana"
+    },
+
+    {
+        "nombre": "Ingles",
+        "dias": "Lunes y jueves",
+        "codigo": 451289,
+        "horario": "Tarde"
+    },
+
+    {
+        "nombre": "Derecho Civil",
+        "dias": "Lunes y jueves",
+        "codigo": 569812,
+        "horario": "Noche"
+    },
+
+    {
+        "nombre": "Derecho Comercial",
+        "dias": "Miércoles y sábados",
+        "codigo": 123456,
+        "horario": "Noche"
+    },
+    
+    {
+        "nombre": "Derecho Laboral",
+        "dias": "Lunes y miércoles",
+        "codigo": 789012,
+        "horario": "Tarde"
+    }
+    ]
+}
