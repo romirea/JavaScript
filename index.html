@@ -8,7 +8,7 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
-        <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Sistema de inscripciones</title>
 </head>
 
@@ -110,7 +110,7 @@
             <!-- <p>Tu promedio general es: <span id="promedio"></span></p> -->
 
             <div id="mensaje-promedio">
-                <!-- El mensaje sobre el promedio se actualizará dinámicamente con JavaScript -->
+                <!-- AGREGAR MENSAJE DE PROMEDIO OBTENIDO -->
             </div>
         </div>
     </div>
@@ -119,56 +119,58 @@
     <div class="container">
         <h2>Materias disponibles</h2>
         <div id="materias-disponibles">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Nombre de la materia</th>
-                <th scope="col">Código de la materia</th>
-                <th scope="col">Días</th>
-                <th scope="col">Horario</th>
-                <th scope="col">Seleccionar</th>
-              </tr>
-            </thead>
-            <tbody id="tabla-materias">
-            </tbody>
-          </table>
-          <section id="materias">
-          </section>
-          <div>
-            <button id="confirmar-seleccion" class="btn btn-primary">Confirmar selección</button>
-            <button id="limpiar-seleccion" class="btn btn-danger">Limpiar selección</button>
-          </div>
-        </div>
-      </div>
-
-      <div id="misMaterias" class="table"></div>
-            
-
-        <!-- Tabla de materias seleccionadas-->
-        <div class="container" id="materias-seleccionadas">
-            <h2>Estás por inscribirte en:</h2>
             <table class="table">
-              <thead>
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre de la materia</th>
+                        <th scope="col">Código de la materia</th>
+                        <th scope="col">Días</th>
+                        <th scope="col">Horario</th>
+                        <th scope="col">Seleccionar</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-materias">
+                </tbody>
+            </table>
+            <section id="materias">
+            </section>
+        </div>
+    </div>
+
+    <div id="misMaterias" class="table"></div>
+
+
+    <!-- Tabla de materias seleccionadas-->
+    <div class="container" id="materias-seleccionadas">
+        <h2>Estás por inscribirte en:</h2>
+        <table class="table">
+            <thead>
                 <tr>
                   <th scope="col">Nombre de la materia</th>
                   <th scope="col">Código de la materia</th>
                   <th scope="col">Días</th>
                   <th scope="col">Horario</th>
                 </tr>
-              </thead>
+            </thead>
 
-              <!-- //AGREGADO DE PRUEBA, TABLA -->
-              <tbody id="tabla-materias-seleccionadas">
-              </tbody>
-            </table>
-          </div>
+            <!-- //AGREGADO DE PRUEBA, TABLA -->
+            <tbody id="tabla-materias-seleccionadas">
+            </tbody>
+        </table>
+        <div>
+            <button id="confirmar-seleccion" class="btn btn-primary">Confirmar selección</button>
+            <button id="limpiar-seleccion" class="btn btn-danger">Limpiar selección</button>
         </div>
+    </div>
+    </div>
 
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
     </script>
+    <!-- Sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="config.js"></script>
 </body>
 

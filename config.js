@@ -172,11 +172,24 @@
 // Lista de materias seleccionadas
     let materiasSeleccionadas = [];
 
-    // Evento "click" en el botón "Limpiar selección"
+// Limpiar selección
 document.getElementById("limpiar-seleccion").addEventListener("click", function () {
-    materiasSeleccionadas.length = 0;
-    actualizarMateriasSeleccionadas();
-});
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: 'Estás por cancelar tu inscripción. ¿Deseas continuar?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      confirmButtonText: 'Sí, cancelar',
+      cancelButtonText: 'No, volver'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        materiasSeleccionadas.length = 0;
+        actualizarMateriasSeleccionadas();
+      }
+    });
+  });
+  
 
   // Actualizar la tabla de materias seleccionadas
 function actualizarMateriasSeleccionadas() {
@@ -184,7 +197,7 @@ function actualizarMateriasSeleccionadas() {
     const tablaMateriasSeleccionadas = document.getElementById("tabla-materias-seleccionadas"); 
     // Vaciar la tabla
     tablaMateriasSeleccionadas.innerHTML = "";
-}
+  }
 
 
 // Agregar materia seleccionada a la lista
@@ -222,3 +235,16 @@ function eliminarMateriaSeleccionada(materia) {
         materiasSeleccionadas.splice(indice, 1);
     }
 }
+
+//CONFIRMAR SELECCION
+const confirmarSeleccionBtn = document.getElementById('confirmar-seleccion');
+confirmarSeleccionBtn.addEventListener('click', () => {
+  Swal.fire({
+    title: '¡Inscripción enviada!',
+    text: 'Tu inscripción ha sido enviada correctamente.',
+    icon: 'success'
+  }).then(() => {
+    // Limpiar la tabla de materias seleccionadas
+    actualizarMateriasSeleccionadas();
+  });
+});
