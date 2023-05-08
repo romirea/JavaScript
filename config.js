@@ -172,6 +172,20 @@
 // Lista de materias seleccionadas
     let materiasSeleccionadas = [];
 
+    // Evento "click" en el botón "Limpiar selección"
+document.getElementById("limpiar-seleccion").addEventListener("click", function () {
+    materiasSeleccionadas.length = 0;
+    actualizarMateriasSeleccionadas();
+});
+
+  // Actualizar la tabla de materias seleccionadas
+function actualizarMateriasSeleccionadas() {
+    // Obtener la tabla
+    const tablaMateriasSeleccionadas = document.getElementById("tabla-materias-seleccionadas"); 
+    // Vaciar la tabla
+    tablaMateriasSeleccionadas.innerHTML = "";
+}
+
 
 // Agregar materia seleccionada a la lista
 function agregarMateriaSeleccionada(materia) {
