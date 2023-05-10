@@ -1,12 +1,17 @@
     // BIENVENIDA AL SISTEMA
 
-    //Bienvenida al usuario
     document.getElementById("btn-bienvenida").addEventListener("click", function () {
         let nombreUsuario = document.getElementById("nombre").value;
-        let mensaje = document.getElementById("mensaje");
-        mensaje.innerText = "Bienvenido/a " + nombreUsuario;
-    });
+      
+        swal.fire({
+          title: `¡Bienvenido/a ${nombreUsuario}!`,
+          text: "¡Comencemos con tu inscripción!",
+          icon: "success",
+          button: "Aceptar",
+        });
+      });
 
+      
     // Selección de elementos del DOM
     const selectorMateria1 = document.getElementById('materia1');
     const selectorMateria2 = document.getElementById('materia2');
