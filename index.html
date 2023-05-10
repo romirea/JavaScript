@@ -16,7 +16,7 @@
     <!-- Encabezado de la página -->
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">Sistema de inscripciones</h1>
+            <h1 class="display-4 mt-5">Sistema de inscripciones</h1>
             <p class="lead">Comencemos a planificar tu inscripción</p>
         </div>
     </div>
@@ -30,7 +30,8 @@
                         <label for="nombre">Ingresa tu nombre:</label>
                         <input type="text" class="form-control" id="nombre" placeholder="Nombre" />
                     </div>
-                    <button type="button" class="btn btn-primary" id="btn-bienvenida">Ingresar</button>
+                    <button type="button" class="btn btn-secondary shadow mt-3 mb-3"
+                        id="btn-bienvenida">Ingresar</button>
                 </form>
             </div>
         </div>
@@ -73,7 +74,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary" id="btn-continuar">Continuar</button>
+            <button type="submit" class="btn btn-secondary mt-3 mb-3" id="btn-continuar">Continuar</button>
         </form>
 
         <!-- Sección de ingreso de dias y horarios para cursada -->
@@ -99,7 +100,7 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-primary">Continuar</button>
+            <button type="submit" class="btn btn-secondary mt-3 mb-3">Continuar</button>
         </form>
 
         <!-- Sección de resultados -->
@@ -140,15 +141,15 @@
 
 
     <!-- Tabla de materias seleccionadas-->
-    <div class="container" id="materias-seleccionadas">
+    <div class="container mb-5" id="materias-seleccionadas">
         <h2>Estás por inscribirte en:</h2>
         <table class="table">
             <thead>
                 <tr>
-                  <th scope="col">Nombre de la materia</th>
-                  <th scope="col">Código de la materia</th>
-                  <th scope="col">Días</th>
-                  <th scope="col">Horario</th>
+                    <th scope="col">Nombre de la materia</th>
+                    <th scope="col">Código de la materia</th>
+                    <th scope="col">Días</th>
+                    <th scope="col">Horario</th>
                 </tr>
             </thead>
 
@@ -157,8 +158,8 @@
             </tbody>
         </table>
         <div>
-            <button id="confirmar-seleccion" class="btn btn-primary">Confirmar selección</button>
-            <button id="limpiar-seleccion" class="btn btn-danger">Limpiar selección</button>
+            <button id="confirmar-seleccion" class="btn btn-secondary mt-3 mb-3">Confirmar selección</button>
+            <button id="limpiar-seleccion" class="btn btn-danger mt-3 mb-3">Limpiar selección</button>
         </div>
     </div>
     </div>
