@@ -23,8 +23,6 @@
     const formCursada = document.getElementById('form-cursada');
     const resultados = document.getElementById('resultados');
     const promedio = document.getElementById('promedio');
-    const mensajePromedio = document.getElementById('mensaje-promedio');
-    const materiaRecomendada = document.getElementById('materia-recomendada');
 
 
     //-------------------------------------------------------------------------
@@ -88,6 +86,7 @@ formMaterias.addEventListener('submit', (event) => {
         promedioGeneral = sumaNotas / cantidadMaterias;
     }
 
+        // Mostrar el promedio en una alerta
     swal.fire({
         title: `Tu promedio es ${promedioGeneral.toFixed(2)}`,
         icon: "success",
