@@ -59,44 +59,48 @@
     });
 
     // Evento "submit" en el formulario de ingreso de materias
-    formMaterias.addEventListener('submit', (event) => {
-        event.preventDefault();
-        formMaterias.style.display = 'none';
-        formCursada.style.display = 'block';
+formMaterias.addEventListener('submit', (event) => {
+    event.preventDefault();
+    formMaterias.style.display = 'none';
+    formCursada.style.display = 'block';
+
+    // Calcular el promedio
+    let sumaNotas = 0;
+    let cantidadMaterias = 0;
+    let promedioGeneral = 0;
+
+    if (!isNaN(parseInt(nota1.value))) {
+        sumaNotas += parseInt(nota1.value);
+        cantidadMaterias++;
+    }
+
+    if (!isNaN(parseInt(nota2.value))) {
+        sumaNotas += parseInt(nota2.value);
+        cantidadMaterias++;
+    }
+
+    if (!isNaN(parseInt(nota3.value))) {
+        sumaNotas += parseInt(nota3.value);
+        cantidadMaterias++;
+    }
+
+    if (cantidadMaterias > 0) {
+        promedioGeneral = sumaNotas / cantidadMaterias;
+    }
+
+    swal.fire({
+        title: `Tu promedio es ${promedioGeneral.toFixed(2)}`,
+        icon: "success",
+        button: "Aceptar",
     });
+});
 
 
     // Evento "submit" en el formulario de materias disponibles
     formCursada.addEventListener('submit', (event) => {
         event.preventDefault();
 
-        // Calcular el promedio
-        let cantidadMaterias = 0;
-        let sumaNotas = 0;
-
-        // Verificar cuántas materias se cursaron y sumar las notas correspondientes
-        if (selectorMateria1.value === "si") {
-            cantidadMaterias++;
-            sumaNotas += parseInt(inputNota1.value);
-        }
-
-        if (selectorMateria2.value === "si") {
-            cantidadMaterias++;
-            sumaNotas += parseInt(inputNota2.value);
-        }
-
-        if (selectorMateria3.value === "si") {
-            cantidadMaterias++;
-            sumaNotas += parseInt(inputNota3.value);
-        }
-
-        // Calcular el promedio
-        const promedioGeneral = sumaNotas / cantidadMaterias;
-
-        // Mostrar el mensaje con el promedio
-        document.getElementById("mensaje-promedio").textContent = `Tu promedio es ${promedioGeneral.toFixed(2)}`;
-
-        // Obtener los valores de diasElegidos y horarioElegido
+    // Obtener los valores de diasElegidos y horarioElegido
         const diasElegidos = document.getElementById("dias-disponibles").value;
         const horarioElegido = document.getElementById("horario-disponible").value;
         document.getElementById("dias-disponibles").addEventListener("change", () => {
@@ -108,29 +112,6 @@
         });
 
     });
-
-
-    // CALCULO DEL PROMEDIO
-    let cantidadMaterias = 0;
-    let sumaNotas = 0;
-
-    if (selectorMateria1.value === "si") {
-        cantidadMaterias++;
-        sumaNotas += parseInt(inputNota1.value);
-    }
-
-    if (selectorMateria2.value === "si") {
-        cantidadMaterias++;
-        sumaNotas += parseInt(inputNota2.value);
-    }
-
-    if (selectorMateria3.value === "si") {
-        cantidadMaterias++;
-        sumaNotas += parseInt(inputNota3.value);
-    }
-
-    const promedioGeneral = sumaNotas / cantidadMaterias;
-    document.getElementById("mensaje-promedio").textContent = `Tu promedio es ${promedioGeneral.toFixed(2)}`;
 
     // -----------------------------------------------------
 
